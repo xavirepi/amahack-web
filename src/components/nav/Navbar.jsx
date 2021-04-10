@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import logo from '../assets/amazhack.svg'
+import logo from '../../assets/amazhack.svg'
 
 const Navbar = () => {
   return (
     <header className="bg-dark py-3 mb-4">
       <div className="container-fluid">
         <div className="d-flex flex-column flex-md-row align-items-center">
-          <Link className="d-flex align-items-center text-light text-decoration-none">
+          <Link to="/" className="d-flex align-items-center text-light text-decoration-none">
             <img className="me-2" src={logo} alt="Amahack" height={40} />
             <span className="fw-bold h5 m-0">Amahack</span>
           </Link>
