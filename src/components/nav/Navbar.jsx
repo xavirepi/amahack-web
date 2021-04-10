@@ -4,7 +4,7 @@ import logo from '../../assets/amazhack.svg'
 
 const Navbar = () => {
   return (
-    <header className="bg-dark py-3 mb-4">
+    <header className="bg-dark py-3">
       <div className="container-fluid">
         <div className="d-flex flex-column flex-md-row align-items-center">
           <Link to="/" className="d-flex align-items-center text-light text-decoration-none">
