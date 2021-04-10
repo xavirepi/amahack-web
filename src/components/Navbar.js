@@ -1,17 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/amazhack.svg'
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-dark bg-dark">
+    <header className="bg-dark py-3 mb-4">
       <div className="container-fluid">
-        <Link className="navbar-brand d-flex align-items-center" to="/">
-          <img className="me-2" src={logo} alt="Amahack" height={40} />
-          <span className="navbar-brand fw-bold h1 m-0 p-0">Amahack</span>
-        </Link>
+        <div className="d-flex flex-column flex-md-row align-items-center">
+          <Link className="d-flex align-items-center text-light text-decoration-none">
+            <img className="me-2" src={logo} alt="Amahack" height={40} />
+            <span className="fw-bold h5 m-0">Amahack</span>
+          </Link>
+
+          <nav className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+            <NavLink className="me-3 py-2 text-light text-decoration-none" to="/signin" exact>
+              Sign in
+            </NavLink>
+            <NavLink className="me-3 py-2 text-light text-decoration-none" to="/register" exact>
+              Register
+            </NavLink>
+          </nav>
+        </div>
       </div>
-    </nav>
+    </header>
   );
 };
 
