@@ -6,3 +6,8 @@ export const getAccessToken = () => accessToken // When this funciton is called 
 export const setAccessToken = (token) => {
     window.localStorage.setItem('token', token) // .setItem() method's first arg is the name of the key we want to save into Local Storage and the second arg is the value
 }
+
+export const logout = () => {
+    window.localStorage.removeItem('token') // We just use removeItem() method to delete the token and then the session will be destroyed
+    window.location.assign('/signin')
+}
