@@ -26,7 +26,7 @@ function App() {
   }, []) // It will be updated only once, when it's sent from the DB
 
   return (
-    // We add user as a prop to the Navabar to manage login/logout
+    // We add user as a prop to the Navbar to manage login/logout
     <div className="App">
       <Navbar user={user} />
 
