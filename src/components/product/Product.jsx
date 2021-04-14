@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getProduct } from "../../services/ProductService";
+import LinkToEdit from "./LinkToEdit";
 
-const Product = ({user}) => {
-    const [product, setProduct] = useState();
+const Product = () => {
     const {id} = useParams(); // Hook used to get params from any level
-
-    console.log('id', id)
+    const [product, setProduct] = useState();
 
     useEffect(() => {
         getProduct(id)
@@ -28,9 +27,10 @@ const Product = ({user}) => {
                 <br />
                     {product.price / 100} €
                 </p>
-               {user.id === product.user && <Link to={`/products/${product.id}/edit`} className="btn btn-primary">
-                    Detail
-                </Link> }
+                <LinkToEdit 
+                    productId={product.id}
+                    productUser={product.user}
+                />
             </div>
         </div>
     );

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/amazhack.svg';
+import { UserContext } from '../../contexts/UserContext';
 import { logout } from '../../store/AccessTokenStore';
 
-const Navbar = ({ user }) => {
+const Navbar = () => {
   // If there's user Sign in and Register dissapear and logout is shown. It there's no user, the opposite.
+  const {user} = useContext(UserContext); // We're accessing user field drom context (line 24 UserContext)
   return (
     <header className="Navbar bg-dark py-3 shadow-lg">
       <div className="container-fluid">

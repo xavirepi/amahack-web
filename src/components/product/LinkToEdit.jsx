@@ -2,8 +2,9 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 
-export default function LinkToEdit({ productUser, productId }) {
+const LinkToEdit = ({ productUser, productId }) => {
   const { user } = useContext(UserContext);
+
   return (
     <div className="LinkToEdit">
       {user?.id === productUser && (
@@ -14,3 +15,5 @@ export default function LinkToEdit({ productUser, productId }) {
     </div>
   );
 }
+
+export default LinkToEdit;

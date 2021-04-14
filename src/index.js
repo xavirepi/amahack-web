@@ -2,13 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'
 import App from './App';
+import { UserContextProvider } from './contexts/UserContext';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
+// If UserContextProvider is added here it can be consumed from anywhere on our app
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <UserContextProvider>
+        <App />
+      </UserContextProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
