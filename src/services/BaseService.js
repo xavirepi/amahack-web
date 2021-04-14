@@ -8,7 +8,7 @@ export const create = (opts = {}) => { // As some requests need authentication a
     })
 
     http.interceptors.request.use(request => { // We create and interceptor in the request to get the request object sent to the backend (Note: interceptors can be used on both the request and the response)
-        // send token as authorization
+        // Send token as authorization
         if (opts.useAccessToken !== false) { // Unless told not to do so, This will always try to set the bearer header authorization
             request.headers.common.Authorization = `Bearer ${getAccessToken()}` // This is the way to set headers
         } else { // Otherwise we'll get sure is not sent by deleting it

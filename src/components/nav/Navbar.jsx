@@ -4,6 +4,7 @@ import logo from '../../assets/amazhack.svg';
 import { logout } from '../../store/AccessTokenStore';
 
 const Navbar = ({ user }) => {
+  // If there's user Sign in and Register dissapear and logout is shown. It there's no user, the opposite.
   return (
     <header className="Navbar bg-dark py-3 shadow-lg">
       <div className="container-fluid">
@@ -25,7 +26,7 @@ const Navbar = ({ user }) => {
             </>
           ) : (
             <>
-              <button className="btn btn-outline-danger me-3 py-2" onClick={logout}>
+              <button className="btn btn-danger me-3 py-2" onClick={logout}>
                 Logout
               </button>
             </>

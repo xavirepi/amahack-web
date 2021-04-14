@@ -84,7 +84,7 @@ const Login = ({ doLogin }) => { // The actual component to be returned - Gets a
                 ...prevState.errors, // We create the copy as in fields key
                 [name]: validators[name] && validators[name](value) // We check if there are validators and in case there are we call it (validators[name])
             }
-        }))// We return an object)
+        })) // We return an object)
     }
 
     const onBlur = (e) => { // To be executed once the client is out of the focus of the input
@@ -113,34 +113,34 @@ const Login = ({ doLogin }) => { // The actual component to be returned - Gets a
         // Invalid feedback is only painted when its brother class is-invalid is true
         // The error object already provides a string
         // The button is disabled if the form isn't valid
-    <div className="Login mt-4 container d-flex justify-content-center">
-      <form onSubmit={onSubmit} style={{ maxWidth: 500 }}>
+        <div className="Login mt-4 container d-flex justify-content-center">
+        <form onSubmit={onSubmit} style={{ maxWidth: 500 }}>
 
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">Email address</label>
-          <input
-            className={`form-control ${touched.email && errors.email ? 'is-invalid' : ''}`}
-            type="email" id="email" name="email" autoComplete="off"
-            value={email} onChange={onChange} onBlur={onBlur} onFocus={onFocus}
-          />
-          <div className="invalid-feedback">{errors.email}</div>
+            <div className="mb-3">
+            <label htmlFor="email" className="form-label">Email address</label>
+            <input
+                className={`form-control ${touched.email && errors.email ? 'is-invalid' : ''}`}
+                type="email" id="email" name="email" autoComplete="off"
+                value={email} onChange={onChange} onBlur={onBlur} onFocus={onFocus}
+            />
+            <div className="invalid-feedback">{errors.email}</div>
+            </div>
+
+            <div className="mb-3">
+            <label htmlFor="password" className="form-label">Password</label>
+            <input
+                className={`form-control ${touched.password && errors.password ? 'is-invalid' : ''}`}
+                type="password" id="password" name="password"
+                value={password} onChange={onChange} onBlur={onBlur} onFocus={onFocus}
+            />
+            <div className="invalid-feedback">{errors.password}</div>
+            </div>
+
+            <button type="submit" className="btn btn-outline-primary" disabled={!isValid()}>
+            Submit
+            </button>
+        </form>
         </div>
-
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">Password</label>
-          <input
-            className={`form-control ${touched.password && errors.password ? 'is-invalid' : ''}`}
-            type="password" id="password" name="password"
-            value={password} onChange={onChange} onBlur={onBlur} onFocus={onFocus}
-          />
-          <div className="invalid-feedback">{errors.password}</div>
-        </div>
-
-        <button type="submit" className="btn btn-outline-primary" disabled={!isValid()}>
-          Submit
-        </button>
-      </form>
-    </div>
     )
 }
 

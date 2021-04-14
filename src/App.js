@@ -6,6 +6,7 @@ import Login from './components/auth/Login';
 import Navbar from './components/nav/Navbar';
 import { getUserInfo } from './services/UserService';
 import { getAccessToken } from './store/AccessTokenStore';
+import Product from './components/product/Product';
 
 function App() {
   // We create the user login management at App.js because it's the "highest point" (It'll be modified using context)
@@ -14,7 +15,6 @@ function App() {
   const getUser = () => { // This function handles the request to the DB to get the user data
     return getUserInfo() // We add return so we can use .then() right after doLogin() on Login.jsx file (onSubmit)
       .then(response => {
-        console.log('getUserInfo App.js', response)
         setUser(response) // We get the user from the DB into the state but it'll be reset if the page is refreshed
       })
   } 
@@ -28,10 +28,11 @@ function App() {
   return (
     // We add user as a prop to the Navbar to manage login/logout
     <div className="App">
-      <Navbar user={user} />
+      <Navbar user={user} /> 
 
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/products/:id" render={(props) => <Product user={user}/>} />
         <Route exact path="/signin" render={() => <Login doLogin={getUser} />} />
       </Switch>
     </div>
