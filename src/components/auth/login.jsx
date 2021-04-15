@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router';
 import { UserContext } from '../../contexts/UserContext';
-import { useUserContext } from '../../hooks/useUserContext';
+import { useUser } from '../../hooks/useUserContext';
 import { login } from '../../services/AuthService';
 import { setAccessToken } from '../../store/AccessTokenStore';
 
@@ -35,7 +35,7 @@ const validators = {
 const Login = () => {
   const { push } = useHistory()
   
-  const {doLogin} = useUserContext(); // Custom hooks are added to hooks directory
+  const {getUser: doLogin} = useUser(); // Custom hooks are added to hooks directory
 
   const [state, setState] = useState({
     fields: {

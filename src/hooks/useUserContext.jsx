@@ -1,4 +1,4 @@
 const { useContext } = require("react");
 const { UserContext } = require("../contexts/UserContext");
 
-export const useUserContext = () => useContext(UserContext);
+export const useUser = () => useContext(UserContext); // Custom hook

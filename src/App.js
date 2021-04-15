@@ -5,6 +5,7 @@ import Login from './components/auth/Login';
 import Home from './components/home/Home';
 import Navbar from './components/nav/Navbar';
 import Product from './components/product/Product';
+import ProductForm from './components/productForm/ProductForm';
 // import { getUserInfo } from './services/UserService';
 // import { getAccessToken } from './store/AccessTokenStore';
 
@@ -33,7 +34,8 @@ function App() {
 
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/products/:id" render={Product} />
+        <Route exact path="/products/:id/edit" component={ProductForm} />
+        <Route exact path="/products/:id" component={Product} />
         <Route exact path="/signin" component={Login} />
         {/* <Route exact path="/products/:id" render={(props) => <Product user={user}/>} /> User prop is no longer needed since the creation of a context*/} 
         {/* <Route exact path="/signin" render={() => <Login doLogin={getUser} />} /> User prop is no longer needed since the creation of a context*/}
