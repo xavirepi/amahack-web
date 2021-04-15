@@ -4,15 +4,12 @@ import { getProduct } from "../../services/ProductService";
 import LinkToEdit from "./LinkToEdit";
 
 const Product = () => {
-    const {id} = useParams(); // Hook used to get params from any level
     const [product, setProduct] = useState();
+    const {id} = useParams(); // Hook used to get params from any level
 
     useEffect(() => {
         getProduct(id)
-            .then(prod => {
-                console.log('response prods', prod)
-                setProduct(prod)
-            });
+            .then(prod => setProduct(prod));
     }, [id]);
 
     if (!product) return 'Loading...';

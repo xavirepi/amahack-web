@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router';
 import './App.css';
-import Home from './components/home/Home';
 import Login from './components/auth/Login';
+import Home from './components/home/Home';
 import Navbar from './components/nav/Navbar';
-import { getUserInfo } from './services/UserService';
-import { getAccessToken } from './store/AccessTokenStore';
 import Product from './components/product/Product';
+// import { getUserInfo } from './services/UserService';
+// import { getAccessToken } from './store/AccessTokenStore';
 
 function App() {
   // // We create the user login management at App.js because it's the "highest point" - modified using context

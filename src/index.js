@@ -6,7 +6,7 @@ import { UserContextProvider } from './contexts/UserContext';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-// If UserContextProvider is added here it can be consumed from anywhere on our app
+// If UserContextProvider is added here it can be consumed from anywhere on our
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>

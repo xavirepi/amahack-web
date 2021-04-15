@@ -19,7 +19,7 @@ export const create = (opts = {}) => { // As some requests need authentication a
     }) 
 
     http.interceptors.response.use( // Interceptors have a second parameter that we'll use to handle the expiration of the token
-        response => response.data,
+        (response) => response.data,
         (error) => {
             if (error.response && [401, 403].includes(error.response.status)) { // Sort of a middleware added to the front
                 logout() // If the token expires it'll throw an error 401 (unauthoraized) or 403 (forbidden) and the user is taken out of the app
